@@ -1,2 +1,36 @@
-<h1>{{pageTitle}}</h1>
-<p>{{content}}</p>
+<header class="o-typography-heading-level-1" role="banner" aria-label="{{content.header}}">
+    <div class="o-grid-row">
+        <div data-o-grid-colspan="12">
+            {{content.header}}
+        </div>
+    </div>
+</header>
+<main>
+    <div class="o-grid-row">
+        <div data-o-grid-colspan="12">
+            <div class="securities-quotes" role="region" aria-label="{{content.header}}">
+                <ul class="securities-quotes-items o-typography-list">
+                    {{#if content.items.length}}
+                        {{#each content.items}}
+                            <li>
+                                {{~this.name~}}
+                                <span
+                                    {{#checkIf this.diff '>' 0}}
+                                    class="up"
+                                    {{else}}
+                                    class="down"
+                                    {{/checkIf}}
+                                >
+                        {{~toFixed this.diff 2~}}%
+                    </span>
+                            </li>
+                        {{/each}}
+                    {{else}}
+                        <li>No results</li>
+                    {{/if}}
+                </ul>
+            </div>
+        </div>
+    </div>
+</main>
+

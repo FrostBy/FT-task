@@ -1,19 +1,19 @@
-/** You can submit this test using either Handlebars or JSX as a templating engine. This is the file to work in if you would like to use JSX */
-
-import React from 'react';
+import React from "react";
+import SecuritiesQuotes from "./SecuritiesQuotes.jsx";
+import Header from "./Header";
+import Error from "./Error";
 
 export default function Home(props) {
-
-	const hero = (
-		<>
-			<h1>{props.pageTitle}</h1>
-		</>
-	);
-
-	return (
-		<>
-			{hero}
-			<p>{props.content}</p>
-		</>
-	);
-};
+    return (
+        <>
+            <Header {...props} />
+            <main>
+                {!props.content.error ?
+                    (<SecuritiesQuotes {...props} />)
+                    :
+                    (<Error {...props}/>)
+                }
+            </main>
+        </>
+    );
+}

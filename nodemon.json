@@ -1,6 +1,7 @@
 {
   "ignoreRoot": [],
   "watch": [
+    "backend",
     "app.js",
     "views"
   ],

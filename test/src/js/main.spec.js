@@ -1,4 +1,4 @@
-const subject = require('../src/js/main');
+const subject = require('../../../src/js/main');
 
 // replace this with your tests
 describe('Testing the client', () => {

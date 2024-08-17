@@ -1,4 +1,64 @@
+@import "@financial-times/o-colors/main";
+@import "@financial-times/o-typography/main";
+@import "@financial-times/o-grid/main";
+@import "@financial-times/o-message/main";
+
+$system-code: task;
+
+@include oColors;
+@include oTypography;
+@include oGrid;
+@include oMessage;
+
 html {
-	background: #fff;
-	color: #333;
+  background-color: oColorsByUsecase("page", "background");
+  color: #333;
+  min-height: 100%;
+  display: flex;
+  flex-flow: column;
+}
+
+body {
+  background-color: oColorsByUsecase("page", "background");
+  flex: 1;
+  min-height: 100%;
+  margin-bottom: 0 !important;
+}
+
+header {
+  margin-top: 20px !important;
+}
+
+.securities-quotes {
+  background-color: var(--o-colors-slate);
+  display: flex;
+  flex-flow: row wrap;
+  white-space: nowrap;
+  text-align: right;
+  box-sizing: content-box;
+
+  &-items {
+    color: var(--o-colors-white-80);
+    display: flex;
+    flex-flow: row wrap;
+    white-space: nowrap;
+    margin-bottom: 0 !important;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    li {
+      padding-top: 8px;
+      padding-bottom: 8px;
+      span {
+        margin-left: 4px;
+
+        &.up {
+          color: var(--o-colors-wasabi);
+        }
+
+        &.down {
+          color: var(--o-colors-candy);
+        }
+      }
+    }
+  }
 }

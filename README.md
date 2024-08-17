@@ -22,7 +22,7 @@ For the at home section, we recommend picking the exercise that plays to your st
 Use the [securities quotes api](#using-our-securities-quotes-api) (also known as stock prices) to get the data for the items below and output the results in plain HTML.
 
 ## Exercise: Build the UI
-Build the component in the design below. If you are doing this one at home and the other part pairing in the office, you can use this [sample JSON](test/fixtures/securities-response.json).
+Build the component in the design below. If you are doing this one at home and the other part pairing in the office, you can use this [sample JSON](test/__fixtures__/securities-response.json).
 
 ![Screenshot of an example securities data component](https://user-images.githubusercontent.com/51677/67555386-b6c5fc80-f700-11e9-86bd-55e975be0441.png)
 

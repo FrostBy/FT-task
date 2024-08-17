@@ -13,12 +13,14 @@
   "scripts": {
     "test": "jest --env=node",
     "build:client": "webpack --watch",
-    "server": "nodemon app.js",
+    "server": "npx @dotenvx/dotenvx run -- nodemon -L app.js",
     "start": "rm -rf dist && npm-run-all --parallel build:client server"
   },
   "author": "Financial Times Ltd.",
   "license": "MIT",
   "dependencies": {
+    "axios": "^1.7.4",
+    "axios-cache-interceptor": "^1.5.3",
     "express": "^4.17.3",
     "express-handlebars": "^6.0.2",
     "react": "^18.2.0",
@@ -28,9 +30,13 @@
   "devDependencies": {
     "@babel/core": "^7.17.5",
     "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.24.7",
+    "@dotenvx/dotenvx": "^1.7.0",
+    "@types/jest": "^29.5.12",
     "babel-loader": "^8.2.3",
     "file-loader": "^6.2.0",
-    "jest": "^27.5.1",
+    "jest": "^29.7.0",
+    "node-mocks-http": "^1.15.1",
     "nodemon": "^2.0.15",
     "npm-run-all": "^4.1.5",
     "sass": "^1.49.9",
@@ -38,5 +44,11 @@
     "supertest": "^6.2.2",
     "webpack": "^5.69.1",
     "webpack-cli": "^4.9.2"
+  },
+  "peerDependencies": {
+    "@financial-times/o-colors": "^6.7.0",
+    "@financial-times/o-grid": "^6.1.8",
+    "@financial-times/o-message": "^5.4.4",
+    "@financial-times/o-typography": "^7.6.2"
   }
 }
